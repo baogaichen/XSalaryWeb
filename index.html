@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XSalary - Compare Expected Salaries</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <img src="Images/Logo.jpg" alt="XSalary Logo" id="xsalary-logo" />
+  <h1>Welcome to XSalary!</h1>
+  <p>Discover how your interested specialty meets your expected salary in Australia.</p>
+</header>
+
+<main>
+  <section>
+    <h2>Get Started</h2>
+    <p>To begin, click the Start button below. You'll be taken to a place where you can explore if your choices are well paid.</p>
+    <a href="profile.html" class="start-button">Let's GO！</a>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2023 IDers(TP22). All rights reserved.</p>
+</footer>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDhy0p12kwdsp82kGunRxvBKKuM6dQpudA",
+    authDomain: "iders-90817.firebaseapp.com",
+    projectId: "iders-90817",
+    storageBucket: "iders-90817.appspot.com",
+    messagingSenderId: "732238399719",
+    appId: "1:732238399719:web:8c191045892107bc92ba42",
+    measurementId: "G-GJ2EFGVGLM"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: Gold;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.start-button, .retry-button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 20px auto;
+    background-color: #007BFF;
+    text-align: center;
+    border-radius: 4px;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.start-button:hover, .retry-button:hover {
+    background-color: #0056b3;
+}
+
+#results-section {
+    text-align: center;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    border: none;
+    border-radius: 4px;        /* Rounded corners */
+    text-decoration: none;     /* Remove underline */
+    font-weight: bold;
+    margin: 10px;              /* Some margin around the button */
+}
+
+.home-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+#xsalary-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 400px;  /* Adjust this to set your logo size */
+}
+
+body {
+    background: linear-gradient(to right, #3498db, Gray); /* This creates a gradient from blue to light blue. */
+}
+
+main {
+    background-image: url(/Images/MainBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;  /* Optional: adds some spacing inside the main content */
+    color: #333;    /* Optional: adjusts text color for readability against the background */
+}
+
+main {
+    position: relative;
+    color: #fff;    /* Adjust as needed */
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+}
+
+/* Ensure content inside main is above the overlay */
+main * {
+    position: relative;
+    z-index: 2;
+}
+
+#industryImage1, #industryImage2 {
+    margin-left: 105px;
+    margin-right: -85px;
+}
+
+iframe {
+    display: block;
+    width: 1050px; /* or whatever width you desire */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    color: Gold;
+    text-align: center;
+}
+
+h4 {
+    margin-left: 335px;
+    margin-right: 70px;
+}

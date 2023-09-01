@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - XSalary</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+  <img src="Images/Logo.jpg" alt="XSalary Logo" id="xsalary-logo" />
+  <h1>XSalary</h1>
+  <a href="index.html" class="home-button">Home</a>
+</header>
+
+<h1>Select Your Area of Expertise</h1>
+<form id="user-form">
+  <label for="industry-select">Area of Expertise:</label>
+  <select id="industry-select">
+    <!-- Add the 18 areas here -->
+    <option value="Mining">Mining</option>
+    <option value="Manufacturing">Manufacturing</option>
+    <option value="Electricity, Gas, Water & Waste services">Electricity, Gas, Water & Waste services</option>
+    <option value="Construction">Construction</option>
+    <option value="Wholesale Trade">Wholesale Trade</option>
+    <option value="Retail Trade">Retail Trade</option>
+    <option value="Accommodation & Food Services">Accommodation & Food Services</option>
+    <option value="Transport, Postal & Warehousing">Transport, Postal & Warehousing</option>
+    <option value="Information Media & Telecommunications">Information Media & Telecommunications</option>
+    <option value="Financial & Insurance Services">Financial & Insurance Services</option>
+    <option value="Rental, Hiring & Real Estate Services">Rental, Hiring & Real Estate Services</option>
+    <option value="Professional, Scientific & Technical Services">Professional, Scientific & Technical Services</option>
+    <option value="Administrative & Support Services">Administrative & Support Services</option>
+    <option value="Public Administration & Safety">Public Administration & Safety</option>
+    <option value="Education & Training">Education & Training</option>
+    <option value="Health Care & Social Assistance">Health Care & Social Assistance</option>
+    <option value="Arts & Recreation Services">Arts & Recreation Services</option>
+    <option value="Other Services">Other Services</option>
+  </select>
+
+  <label for="expected-salary">Expected Weekly Salary ($AUD):</label>
+  <input type="number" id="expected-salary" placeholder="Expected Salary">
+
+  <button id="submit-button">Submit</button>
+</form>
+
+<h2>Hey! Here's a pie shows current industry performance:</h2>
+<style>
+  #chartContainer {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto; /* This centers the block horizontally */
+  }
+</style>
+<div id="chartContainer">
+  <canvas id="industryPieChart"></canvas>
+</div>
+
+<script>
+async function fetchIndustryData() {
+const response = await fetch('Data/industry.csv');
+const csvString = await response.text();
+const [, ...lines] = csvString.trim().split('\n');
+
+const industries = [];
+const incomeRates = [];
+
+lines.forEach(line => {
+const [industry, rate] = line.split(',');
+industries.push(industry.replace(/"/g, ''));  // remove double quotes if they exist
+incomeRates.push(parseFloat(rate));
+});
+
+return { industries, incomeRates };
+}
+async function drawPieChart() {
+  const { industries, incomeRates } = await fetchIndustryData();
+
+  const ctx = document.getElementById('industryPieChart').getContext('2d');
+  const data = {
+    datasets: [{
+      data: incomeRates,
+      // Include a range of colors for each slice of the pie
+      backgroundColor: [
+        '#FF6384', '#36A2EB', '#FFCE56', /*...add more colors if you have more industries*/
+      ]
+    }],
+    labels: industries
+  };
+
+  const options = {
+    responsive: true,
+    legend: {
+      position: 'right'
+    }
+  };
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: data,
+    options: options
+  });
+}
+
+window.onload = async function() {
+  await drawPieChart();
+};
+</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

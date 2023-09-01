@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSalary - Results</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script defer src="js/results.js"></script>
+
+</head>
+<body>
+<header>
+    <img src="Images/Logo.jpg" alt="XSalary Logo" id="xsalary-logo" />
+    <h1>XSalary</h1>
+    <a href="index.html" class="home-button">Home</a>
+</header>
+
+<main>
+    <h2>Results</h2>
+
+    <div id="results-section">
+        <p>
+            <strong>Selected Industry:</strong>
+            <span id="industry-display">Loading...</span>
+        </p>
+        <p>
+            <strong>Your Expected Salary(weekly):</strong>
+            $<span id="expected-salary-display">0.00</span>
+        </p>
+        <p>
+            <strong>Average Weekly Salary in the Industry:</strong>
+            $<span id="average-salary-display">0.00</span>
+        </p>
+        <p>
+            <strong>Difference:</strong>
+            $<span id="difference-display">0.00</span>
+        </p>
+
+        <p id="feedback">Calculating...</p>
+
+        <a href="profile.html" class="retry-button">Try Again</a>
+    </div>
+</main>
+
+<h3 style="font-size: 26px;">Dashboard</h3>
+<h4 style="display: inline-block">Salary Interval</h4>
+<h4 style="display: inline-block">Salary Trends</h4>
+
+<img id="industryImage1" src="" alt="Industry Related Image 1" width="530">
+<img id="industryImage2" src="" alt="Industry Related Image 2" width="500">
+<script>
+const industry = localStorage.getItem("industry");  // assuming you've stored the selected industry in localStorage
+
+    function setImageBasedOnIndustry(industry) {
+    const imageElement1 = document.getElementById("industryImage1");
+    const imageElement2 = document.getElementById("industryImage2");
+
+    switch (industry) {
+    case "Mining":
+    imageElement1.src = "Images/Mining1.png";
+    imageElement2.src = "images/Mining2.png";
+    break;
+
+    case "Manufacturing":
+    imageElement1.src = "Images/Manufacturing1.png";
+    imageElement2.src = "Images/Manufacturing2.png";
+    break;
+
+    case "Electricity, Gas, Water & Waste services":
+    imageElement1.src = "Images/Electricity, Gas, Water & Waste services1.png";
+    imageElement2.src = "Images/Electricity, Gas, Water & Waste services2.png";
+    break;
+
+    case "Construction":
+    imageElement1.src = "Images/Construction1.png";
+    imageElement2.src = "Images/Construction2.png";
+    break;
+
+    case "Wholesale Trade":
+    imageElement1.src = "Images/Wholesale Trade1.png";
+    imageElement2.src = "Images/Wholesale Trade2.png";
+    break;
+
+    case "Retail Trade":
+    imageElement1.src = "Images/Retail Trade1.png";
+    imageElement2.src = "Images/Retail Trade2.png";
+    break;
+
+    case "Accommodation & Food Services":
+    imageElement1.src = "Images/Accommodation & Food Services1.png";
+    imageElement2.src = "Images/Accommodation & Food Services2.png";
+    break;
+
+    case "Transport, Postal & Warehousing":
+    imageElement1.src = "Images/Transport, Postal & Warehousing1.png";
+    imageElement2.src = "Images/Transport, Postal & Warehousing2.png";
+    break;
+
+    case "Information Media & Telecommunications":
+    imageElement1.src = "Images/Information Media & Telecommunications1.png";
+    imageElement2.src = "Images/Information Media & Telecommunications2.png";
+    break;
+
+    case "Financial & Insurance Services":
+    imageElement1.src = "Images/Financial & Insurance Services1.png";
+    imageElement2.src = "Images/Financial & Insurance Services2.png";
+    break;
+
+    case "Rental, Hiring & Real Estate Services":
+    imageElement1.src = "Images/Rental, Hiring & Real Estate Services1.png";
+    imageElement2.src = "Images/Rental, Hiring & Real Estate Services2.png";
+    break;
+
+    case "Professional, Scientific & Technical Services":
+    imageElement1.src = "Images/Professional, Scientific & Technical Services1.png";
+    imageElement2.src = "Images/Professional, Scientific & Technical Services2.png";
+    break;
+
+    case "Administrative & Support Services":
+    imageElement1.src = "Images/Administrative & Support Services1.png";
+    imageElement2.src = "Images/Administrative & Support Services2.png";
+    break;
+
+    case "Public Administration & Safety":
+    imageElement1.src = "Images/Public Administration & Safety1.png";
+    imageElement2.src = "Images/Public Administration & Safety2.png";
+    break;
+
+    case "Education & Training":
+    imageElement1.src = "Images/Education & Training1.png";
+    imageElement2.src = "Images/Education & Training2.png";
+    break;
+
+    case "Health Care & Social Assistance":
+    imageElement1.src = "Images/Health Care & Social Assistance1.png";
+    imageElement2.src = "Images/Health Care & Social Assistance2.png";
+    break;
+
+    case "Arts & Recreation Services":
+    imageElement1.src = "Images/Arts & Recreation Services1.png";
+    imageElement2.src = "Images/Arts & Recreation Services2.png";
+    break;
+
+    case "Other Services":
+    imageElement1.src = "Images/Other Services1.png";
+    imageElement2.src = "Images/Other Services2.png";
+    break;
+    //... Add cases for each industry...
+
+    default:
+    // Optional: You can have default images in case the industry doesn't match any of the cases
+    imageElement1.src = "Images/default1.png";
+    imageElement2.src = "Images/default2.png";
+    break;
+    }
+    }
+
+    // When the page loads, update the images based on the industry
+    setImageBasedOnIndustry(industry);
+</script>
+
+<h3>Average Salary Level Each State Australia Wide Map</h3>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const industry = localStorage.getItem("industry"); // Assuming the selected industry is stored in localStorage
+        const industryIframe = document.getElementById("industryIframe");
+        industryIframe.src = `maps/${industry}.html`;
+    });
+</script>
+<iframe id="industryIframe" width="1000" height="500"></iframe>
+
+<footer>
+    XSalary © 2023. All rights reserved.
+</footer>
+</body>
+</html>
