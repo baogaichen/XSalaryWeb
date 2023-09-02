@@ -95,7 +95,7 @@ body {
 main {
     background-image: url(../Images/MainBG.jpg);
     background-size: cover;
-    background-size: contain;
+    /*background-size: contain;*/
     background-repeat: no-repeat;
     background-position: center center;
     padding: 20px;  /* Optional: adds some spacing inside the main content */
