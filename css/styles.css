@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    /*background-color: #f4f4f4;*/
     color: #333;
     margin: 0;
     padding: 0;
@@ -18,12 +18,8 @@ main {
     width: 80%;
     margin: 20px auto;
     padding: 20px;
-    /*background-color: #fff;*/
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    background-size: cover;
-    background: url(../Images/MainBG.jpg) no-repeat center center;
-    padding: 20px;  /* Optional: adds some spacing inside the main content */
-    color: #333;    /* Optional: adjusts text color for readability against the background */
 }
 
 h1, h2 {
@@ -94,6 +90,15 @@ a:hover {
 
 body {
     background: linear-gradient(to right, #3498db, Gray); /* This creates a gradient from blue to light blue. */
+}
+
+main {
+    background-image: url(../Images/MainBG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;  /* Optional: adds some spacing inside the main content */
+    color: #333;    /* Optional: adjusts text color for readability against the background */
 }
 
 main {
