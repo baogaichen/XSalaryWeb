@@ -20,6 +20,10 @@ main {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-size: cover;
+    background: url(../Images/MainBG.jpg) no-repeat center center;
+    padding: 20px;  /* Optional: adds some spacing inside the main content */
+    color: #333;    /* Optional: adjusts text color for readability against the background */
 }
 
 h1, h2 {
@@ -90,13 +94,6 @@ a:hover {
 
 body {
     background: linear-gradient(to right, #3498db, Gray); /* This creates a gradient from blue to light blue. */
-}
-
-main {
-    background-size: cover;
-    background: url(../Images/MainBG.jpg) no-repeat center center;
-    padding: 20px;  /* Optional: adds some spacing inside the main content */
-    color: #333;    /* Optional: adjusts text color for readability against the background */
 }
 
 main {
