@@ -93,8 +93,8 @@ body {
 }
 
 main {
-    background-image: url(../Images/MainBG.jpg);
-    /*background-size: cover;*/
+    background-image: url(/Images/MainBG.jpg);
+    background-size: cover;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
